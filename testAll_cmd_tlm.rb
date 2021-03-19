@@ -9,7 +9,6 @@ System.commands.all.each do |target_name, target|
   if target_name == 'UNKNOWN' then
     next
   end
-  puts target_name
   
   # run each available command for the target
   target.each do |packet_name, packet|
@@ -36,7 +35,7 @@ System.commands.all.each do |target_name, target|
       end
     end
     
-    cmd_log_fd.write(cmd_str)
+    cmd_log_fd.puts(cmd_str)
     cmd(cmd_str)
   end
 end
